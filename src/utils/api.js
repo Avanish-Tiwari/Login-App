@@ -1,7 +1,7 @@
 const BASE_URL = import.meta.env.VITE_API_URL || '';
 const getToken = () => localStorage.getItem('token');
 
-export const registerUser = async (name, email, password) => {
+export const registerUser = async ({name, email, password}) => {
   const response = await fetch(`${BASE_URL}/api/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
